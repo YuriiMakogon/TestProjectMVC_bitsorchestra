@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+<div class="row">
+    <div class="col-md-5">
+        
+        <form method="post" enctype="multipart/form-data" asp-controller="Import" asp-action="Index">
+            <div class="form-group">
+                <div class="col-md-10">
+                    @*<p>Upload file</p>*@
+                    <p>
+                    <input class="form-control" name="files" type="file" />
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-md-10">
+                    <input class="btn btn-success" type="submit" value="Upload" />
+                    <input class="btn btn-success" type="button" value="Back to Home" onclick="location.href='@Url.Action("Index", "Trans")'" />
+                </div>
+            </div>
+        </form>
+        @ViewBag.Message
+    </div>
+</div> 
